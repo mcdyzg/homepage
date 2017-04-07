@@ -1,57 +1,37 @@
-# vue-boilerplate
+# homepage
+仿chrome插件momentum，使用vue完成。
+### Usage
 
-### 简介
+```
+1. npm install
+2. npm start
+3. open 0.0.0.0:8081
+```
 
-vue开发框架，使用webpack2打包，支持ES6语法，ES7 async函数。
+### Features
+
+* vue
+* vue-router
+* ES6
+
+
 
 ### 目录结构
+```
+├── dist
+├── lib
+├── src
+│   ├── components   	
+│   ├── router		
+│   ├── assets
+│   ├── pages
+│   ├── App.vue
+│   ├── main.js
+├── index.html
+├── package.json
+└── README
+```
 
--dist 压缩后文件夹
+### Explation
 
-|
-
--src 源文件夹
-
-  |
-
-   -main.js 打包入口等全局设置
-
-  |
-
-   -App.vue 根组件
-
-  |
-
-   -router/index.js 路由配置
-
-  |
-
-   -page 页面文件夹
-
-  |
-
-   -components 组件文件夹
-
-  |
-
-   -modules 模块文件夹
-
-  |
-
-   -store 状态文件夹
-
-
-### Build Setup
-
-  ``` bash
-  # install dependencies
-  npm install
-
-  # serve with hot reload at 0.0.0.0:8082
-  npm start
-
-  # build for production with minification
-  npm run build
-  ```
-
-
+1. 提供基本的修改名称、todolist的功能，未做天气预报功能。

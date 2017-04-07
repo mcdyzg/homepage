@@ -36,7 +36,7 @@
 					{{nowTime}}
 				</div>
 				<div class="hp-hello">
-					Good morning
+					Good {{timedot}}
 					<transition name='fade' mode='out-in'>
 					 <div
 					 	key='static'
@@ -125,7 +125,6 @@ import _trim from 'lodash/trim'
 import bg from '@/assets/img/bg4.jpg';
 import overlay from '@/assets/img/overlay.png';
 import { Popover } from 'element-ui'
-import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 
 import Checkbox from '@/components/Checkbox'
 
@@ -146,6 +145,7 @@ export default {
 			// 是否已经输入过名字
 			HasInputName:false,
 			nowTime:'',
+			timedot:'morning',
 			// 今天已完成的打钩
 			finashToday:false,
 			encourageWord:'The pessimist complains about the wind; the optimist expects it to change; the realist adjusts the sails',
@@ -176,7 +176,13 @@ export default {
 		},
 		getTime(){
 			let time = new Date()
-			this.nowTime = time.getHours()+':'+(time.getMinutes()<10?"0"+time.getMinutes():time.getMinutes())
+			this.nowTime = time.getHours()+':'+(time.getMinutes()<10?"0"+time.getMinutes():time.getMinutes());
+			if(time.getHours <= 12 && time.getHours >= 6){
+				this.timedot = 'morning';
+			}else{
+				this.timedot = 'afternoon';
+			}
+
 			setInterval(()=>{
 				let tem = new Date();
 				this.nowTime = tem.getHours()+':'+(time.getMinutes()<10?"0"+time.getMinutes():time.getMinutes())
@@ -225,11 +231,9 @@ export default {
 		noInputName(){
 			return (this.HasInputName) || (localStorage.yourName !== undefined)
 		}
-		// ...mapState([
-		// 	'encourageWord'
-		// ])
 	},
 	watch:{
+
 	}
 }
 </script>
