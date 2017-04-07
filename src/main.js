@@ -2,6 +2,10 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
+// import { Button, Select } from 'element-ui'
+// import 'element-ui/lib/theme-default/index.css'
+
+// Vue.use(Button)
 
 
 new Vue({
@@ -19,9 +23,6 @@ new Vue({
     // console.log(this)
   },
   computed:{
-  	computedMethod(){
-  		return 'hhhh'
-  	}
   },
   updated(){
   }

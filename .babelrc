@@ -5,7 +5,13 @@
   ],
   // for async, generator
   "plugins": [
-  	"transform-runtime"
+  	"transform-runtime",
+  	["component", [
+	    {
+	      "libraryName": "element-ui",
+	      "styleLibraryName": "theme-default"
+	    }
+	]]
   ]
 }
 // 下面这种写法是给不需要async函数的用的

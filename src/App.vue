@@ -5,7 +5,7 @@
 </template>
 
 <script>
-
+import './assets/base.css'
 export default {
   name: 'app',
   components: {
@@ -28,8 +28,8 @@ export default {
   height:100%;
 }
 html,body{
-  height:100%;
-  font-size: 16px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  height:100%!important;
+  font-size: 16px!important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif!important;
 }
 </style>

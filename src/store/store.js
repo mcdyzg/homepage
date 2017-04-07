@@ -1,41 +1,55 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import part2 from './modules/part2.js'
+import request from 'superagent'
 
 Vue.use(Vuex)
 const state = {
-	count : 0,
+	encourageWord:'222'
 }
 
-const getters = {
-	getter1: state => {
-		return state.count === 0 ?'true':'false'
-	}
-}
+// const getters = {
+// 	getter1: state => {
+// 		return state.count === 0 ?'true':'false'
+// 	}
+// }
 
 const mutations = {
-	increment(state){
-		state.count++
-	},
-	decrement(state){
-		state.count--
+	// increment(state,a){
+	// 	console.log(a)
+	// 	state.count++
+	// },
+	// decrement(state){
+	// 	state.count--
+	// }
+	setEncourageWord(state, data){
+		console.log(data)
+		// state.encourageWord = data
 	}
 }
 
 const actions = {
-	incrementAsync({commit,state,dispatch}){
-		setTimeout(()=>{
-			commit('increment')
-		},1000)
+	// incrementAsync({commit,state,dispatch}){
+	// 	setTimeout(()=>{
+	// 		commit('increment','haha')
+	// 	},1000)
+	// }
+	getEncourageWord({commit,state}){
+		console.log(111)
+		request
+		.get('http://open.iciba.com/dsapi/')
+		.end(function(err, res){
+		     console.log(res)
+		});
 	}
 }
 
 export default new Vuex.Store({
 	actions,
-	getters,
-	modules:{
-		part2
-	},
+	// getters,
+	// modules:{
+	// 	part2
+	// },
   	state,
   	mutations
 })
